@@ -7,25 +7,17 @@ public final static String e = "2.7182818284590452353602874713526624977572470936
 public void setup()  
 {            
      noLoop();
-     
 
-	for (int i = 2; i <= 100; i++)
-	{
-		int startIndex = i;
-     	int endIndex = i+10;
-     	String digits = e.substring(startIndex,endIndex);
-	 	double dNum = Double.parseDouble(digits);
+     for (int pos = 2; pos < e.length()-9; pos++)
+     {
+     	double dNum = Double.parseDouble(e.substring(pos,pos+10)); 
 
-		if (isPrime(dNum) == false)
-	 		{
-	 			i++;
-	 		}
-
-	 	if (isPrime(dNum) == true)
-	 		{
-	 			System.out.println(dNum);
-	 		}
-	}	
+     	if (isPrime(dNum) == true)
+     	{
+     		System.out.println(dNum);
+     		break;
+     	}
+     }
 }  
 
 
